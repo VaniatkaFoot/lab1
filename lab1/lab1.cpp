@@ -20,7 +20,7 @@ int snakeTailX[100], snakeTailY[100];
 // variable to store the length of the sanke's tail 
 int snakeTailLen;
 // for storing snake's moving snakesDirection 
-enum snakesDirection { STOP = 0, LEFT, RIGHT, UP, DOWN };
+enum snakesDirection { STOP, LEFT, RIGHT, UP, DOWN };
 // snakesDirection variable 
 snakesDirection sDir;
 // boolean variable for checking game is over or not 
@@ -56,15 +56,14 @@ void GameRender(string playerName)
 			// Creating snake's head with 'O' 
 			if (i == y && j == x)
 				cout << "O";
-			// Creating the sanke's food with '#' 
+			// Creating the snake's food with '#' 
 			else if (i == fruitCordY && j == fruitCordX)
 				cout << "#";
 			// Creating snake's head with 'O' 
 			else {
 				bool prTail = false;
 				for (int k = 0; k < snakeTailLen; k++) {
-					if (snakeTailX[k] == j
-						&& snakeTailY[k] == i) {
+					if (snakeTailX[k] == j && snakeTailY[k] == i) {
 						cout << "o";
 						prTail = true;
 					}
